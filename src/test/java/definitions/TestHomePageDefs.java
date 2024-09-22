@@ -7,8 +7,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.home.CrmblHome;
-import pages.home.OrderPage;
+import pages.home.CrmblHomePage;
+import pages.Order.OrderPage;
 
 import java.time.Duration;
 
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static support.DriverFactory.getDriver;
 
 public class TestHomePageDefs {
-    CrmblHome crumblHomePage = new CrmblHome();
+    CrmblHomePage crumblHomePage = new CrmblHomePage();
     OrderPage orderPage = new OrderPage();
 
     @Given("I open the home page")
@@ -50,6 +50,20 @@ public class TestHomePageDefs {
     @Then("I verify Order page opens")
     public void iVerifyOrderPageOpens() {
         String expectedUrl = "https://crumblcookies.com/order";
+        String currentUrl = getDriver().getCurrentUrl();
+        assertEquals(expectedUrl, currentUrl);
+    }
+
+    @Then("I verify Our story page opens")
+    public void iVerifyOurStoryPageOpens() {
+        String expectedUrl = "https://crumblcookies.com/our-story";
+        String currentUrl = getDriver().getCurrentUrl();
+        assertEquals(expectedUrl, currentUrl);
+    }
+
+    @Then("I verify Rewards page opens")
+    public void iVerifyRewardsPageOpens() {
+        String expectedUrl = "https://crumblcookies.com/rewards";
         String currentUrl = getDriver().getCurrentUrl();
         assertEquals(expectedUrl, currentUrl);
     }

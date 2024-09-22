@@ -1,6 +1,5 @@
 package pages.home;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,9 +10,9 @@ import java.time.Duration;
 
 import static support.DriverFactory.getDriver;
 
-public class CrmblHome extends Page {
+public class CrmblHomePage extends Page {
 
-    public CrmblHome() {
+    public CrmblHomePage() {
         title = "Crumbl Cookies - Freshly Baked & Delivered Cookies";
         url = "https://crumblcookies.com/";
     }
